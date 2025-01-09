@@ -51,9 +51,9 @@ public class TriangleCollection {
     // three Points in every Triangle in the collections array
     // ADD GETTER AND SETTER METHODS TO OTHER CLASSES AS NECESSARY
     public void shiftTriangles(int increment) {
-      for (int i = 0; i < collection.length; i++) {
+      for (Triangle triangle: collection) {
           for (int y = 0; y < 3; y++) { // Each triangle has 3 vertices
-              Point vertex = collection[i].getVertex(y);
+              Point vertex = triangle.getVertex(y);
               vertex.setX(vertex.getX() + increment);
               vertex.setY(vertex.getY() + increment);
           }
@@ -69,11 +69,11 @@ public class TriangleCollection {
     //  [(1, 5), (5, 12), (8, 5)]
     //  [(1, 5), (5, 12), (7, 5)]"
     public String triangleCollectionInfo() {
-      StringBuilder sb = new StringBuilder();
-      for (Triangle triangle : collection) {
-          sb.append(triangle.triangleInfo()).append("\n");
+      String str = "";
+      for (Triangle triangle : collection){
+        str+=triangle.triangleInfo() + "\n";
       }
-      return sb.toString().trim();
+      return str;
     }
   }
   

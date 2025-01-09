@@ -27,13 +27,10 @@ public class Triangle {
     }
 
     public Point getVertex(int index) {
-      if (index < 0 || index >= vertices.length) {
-          throw new IllegalArgumentException("Index out of bounds");
-      }
       return vertices[index];
     }
 
-    public Object[] getVertices() {
+    public Point[] getVertices() {
         return vertices;
     }
   }
